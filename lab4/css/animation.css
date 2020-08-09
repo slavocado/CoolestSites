@@ -1,0 +1,20 @@
+@-webkit-keyframes up-down {
+  0% {
+    -webkit-transform: tramnslateY(10px);
+            transform: tramnslateY(10px);
+  }
+  100% {
+    -webkit-transform: tramnslateY(-10px);
+            transform: tramnslateY(-10px);
+  }
+}
+@keyframes up-down {
+  0% {
+    -webkit-transform: tramnslateY(10px);
+            transform: tramnslateY(10px);
+  }
+  100% {
+    -webkit-transform: tramnslateY(-10px);
+            transform: tramnslateY(-10px);
+  }
+}

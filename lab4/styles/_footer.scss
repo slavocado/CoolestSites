@@ -1,0 +1,24 @@
+.footer{
+    @include flex(center, space-around, column);
+    border-top: 1px solid rgb(129, 54, 54);
+    padding: 30px 0;
+    &__links{
+        @include flex(center, space-around, row);
+        margin-bottom: 30px;
+        width: 80%;
+    }
+    &__link{
+        color: $footer-link-color;
+        font-size: $footer-link-font-size;
+        transition: $transition-time;
+        &:hover{
+            color: $footer-link-color-hover;
+        }
+    }
+    &__social.social{ // двойной селектор для увеличения силы, тк с одинарным не работает
+        flex-direction: row;
+        .social__item:hover{
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+}

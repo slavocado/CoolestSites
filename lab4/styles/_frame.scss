@@ -1,0 +1,47 @@
+.page{
+    min-height: 100vh;
+    @include flex(center, center, column);
+    background-image: none;
+    &__header{
+        width: 90vw;
+        padding: $header-padding 0;
+    }
+    &__img{
+        background-image: url('../img/frame1/main-img.png');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: $frame-img-width;
+        height: 100vh;
+        z-index: -1;
+    }
+    &__describing{
+        @include flex(flex-start, center, column);
+        align-self: flex-end;
+        padding: 0 50px;
+        width: $frame-describing-width;
+        flex-grow: 1;
+    }
+    .describing__container{
+        @include flex(flex-start, center, column);
+        max-width: $describing-container-max-width;
+    }
+    &__service-naming{
+        margin-bottom: 50px;
+        font-size: $frame-h1;
+    }
+    &__text{
+        margin-bottom: 30px;
+        font-size: $frame-p;
+        line-height: $frame-p-line-height;
+    }
+    &__button{
+        margin-bottom: 100px;
+        max-width: 100px;
+    }
+    &__footer{
+        display: none;
+    }
+}

@@ -1,0 +1,21 @@
+@media (max-width: 1280px){
+    .footer__links{
+        flex-direction: column;
+    }
+    .footer__link{
+        margin-bottom: 25px;
+        font-size: $tablet-footer-link-font-size;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: 425px){
+    .footer__links{
+        width: 100%;
+    }
+    .footer__link{
+        font-size: $mobile-footer-link-font-size;
+    }
+}

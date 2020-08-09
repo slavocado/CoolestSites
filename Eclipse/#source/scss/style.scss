@@ -1,0 +1,425 @@
+//Файл обнуляющих стилей
+@import "null_style.scss";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+
+$violet: #a100ff;
+$light-gray: #d8e0e8;
+$light-gray2: #f6f9fa;
+$white: #fff;
+$ocean: #28c8c6;
+$dark-gray: #808080;
+$gray: #8297a7;
+$tweet-color: #69b6f2;
+$facebook-color: #3a579a;
+$height: 50px;
+$radius: 5px;
+$scrolldown-width: 115px;
+$content-width: 650px;
+$big-content-width: 800px;
+$min-content-width: 500px;
+
+$mob-margin: 25px;
+
+%flex_row{
+    display: flex;
+    align-items: center;
+}
+
+%flex_col{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+%flex_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// паттерны шрифтов
+%font_white_up{
+    color: #fff;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+%font_white{
+    color: #fff;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+%font_black_up{
+    color: #333b42;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+%font_black{
+    color: #74797e;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+%form{
+    color: #333333;
+    font-size: 14px;
+    font-family: Montserrat;
+}
+///////////////////////////////
+h1{
+    @extend %font_white_up;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+h2{
+    @extend %font_black_up;
+    font-size: 40px;
+}
+
+h3{
+    @extend %font_black_up;
+    font-size: 17px;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+p{
+    font-size: 14px;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+.scroller{
+    width: $scrolldown-width;
+    height: $scrolldown-width;
+    @extend %flex_center;
+    border-radius: 50%;
+    margin-top: -($scrolldown-width/2);
+    cursor: pointer;
+    transition: .4s;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.page{
+    @extend %flex_col;
+    &:first-child{
+        padding-top: 50px;
+        height: 100vh;
+        min-height: 600px;
+        background-image: url("img/sneakers.png");
+        background-size: cover;
+        header{
+            @extend %flex_row;
+            justify-content: space-around;
+            max-width: 1200px;
+            min-width: 80vw;
+            ul{
+                @extend %flex_row;
+                justify-content: space-between;
+                min-width: 320px;
+                @extend %font_white_up;
+                font-size: 14px;
+                li{
+                    padding: 10px;
+                    transition: .6s;
+                    border-radius: 10px;
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 0.308);
+                    }
+                }
+            }
+            .extender{
+                flex-grow: 2;
+            }
+            button{
+                background-color: $violet;
+                @extend %flex_row;
+                justify-content: center;
+                margin-left: 25px;
+                height: $height;
+                width: 130px;
+                border-radius: $radius;
+                @extend %font_white;
+            }
+        }
+        .container{
+            width: $content-width;
+            align-self: flex-start;
+            margin-left: 10vw;
+            margin-top: 20vh;
+            h1{
+                margin-bottom: 40px;
+            }
+            p{
+                margin-bottom: 30px;
+                @extend %font_white;
+                text-align: left;
+            }
+            form{
+                display: flex;
+            }
+            input{
+                height: $height;
+                width: 280px;
+                border-radius: $radius;
+                padding-left: 10px;
+                margin-right: 10px;
+            };
+            input:last-child{
+                width: $height;
+                background-color: #fff;     
+                padding: 0;    
+                @extend %form;
+                font-size: 13px;
+                cursor: pointer;
+            }
+            ::placeholder{
+                @extend %form;
+            }
+        }
+    }
+    &:nth-child(2){
+        background-color: $light-gray;
+        .scroller{
+            background-color: $light-gray;
+        }
+        h2{
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        p{
+            @extend %font_black;
+            margin-bottom: 70px;
+        }
+        .container{
+            @extend %flex_col;
+            background-color: $light-gray;
+            width: $content-width;
+        }
+    }
+    &:nth-child(3){
+        .scroller{
+            background-color: $ocean;
+        }
+        h2{
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        p{
+            @extend %font_black;
+            margin-bottom: 70px;
+        }
+        .container{
+            @extend %flex_col;
+            width: $content-width;
+        }
+        .container_row{
+            @extend %flex_row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 70vw;
+            .feature{
+                @extend %flex_col;
+                width: 15vw;
+                min-width: 185px;
+                padding: 10px 20px;
+                transition: .6s;
+                &:hover{
+                    -webkit-box-shadow: 7px 7px 27px 0px rgba(50, 50, 50, 0.65);
+                    -moz-box-shadow: 7px 7px 27px 0px rgba(50, 50, 50, 0.65);
+                    box-shadow: 7px 7px 27px 0px rgba(50, 50, 50, 0.65);
+                }
+            }
+            h3{
+                text-align: center;
+                margin: 30px 0;
+            }
+        }
+    }
+    &:nth-child(4){
+        background-color: $light-gray2;
+        .scroller{
+            background-color: $white;
+        }
+        .container{
+            @extend %flex_col;
+            width: $big-content-width;
+        }
+        h2{
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        p{
+            @extend %font_black;
+            margin-bottom: 70px;
+        }
+        .tabs{
+            @extend%flex_col;
+            .tab-nav{
+                margin: 0;
+                height: $height;
+                width: 570px;
+                border: 1px solid $ocean;
+                @extend %flex_row;
+                margin-bottom: 40px;
+                li{
+                    height: 100%;
+                    width: 25%;
+                }
+                li a{
+                    @extend %font_white_up;
+                    @extend %flex_center;
+                    color: $ocean;
+                    height: 100%;
+                    text-decoration: none;
+                    transition: .4s;
+                    &.active{
+                        color: $white;
+                        background-color: $ocean;
+                        &:hover{
+                            background-color: $ocean;
+                        }
+                    }
+                    &:hover{
+                        background-color: #e2f6f6;
+                    }
+                }
+            }
+            .faded{
+                opacity: 0;
+                transition: .5s;
+                &.in{
+                    opacity: 1;
+                    transition: .5s;
+                }
+            }
+            
+            .tab-pane{
+                display: none;
+                @extend %flex_row;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 80vw;
+                padding-bottom: 5vw;
+                .listing{
+                    width: 30%;
+                    background-color: $white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: .4s;
+                    &:hover{
+                        transform: scale(1.05);
+                        -webkit-box-shadow: 7px 7px 27px 0px rgba(50, 50, 50, 0.3);
+                        -moz-box-shadow: 7px 7px 27px 0px rgba(50, 50, 50, 0.3);
+                        box-shadow: 7px 7px 27px 0px rgba(50, 50, 50, 0.3);
+                    }
+                    img:first-child{
+                        width: 100%;
+                    }
+                    h3{
+                        margin: 20px 0 20px 5px;
+                    }
+                }
+            }
+            .active{
+                display: flex;
+            }
+        }
+        
+    }
+    &:nth-child(5){
+        background-image: url("img/women.png");
+        height: 90vh;
+        padding-left: 10vw;
+        flex-direction: row;
+        img{
+            width: 170px;
+        }
+        .container{
+            @extend %flex_col;
+            width: $min-content-width;
+            margin-left: 5vw;
+            z-index: 1;
+            p{
+                @extend %font_white;
+                text-align: left;
+            }
+        }
+    }
+    &:nth-child(6){
+        background-color: $white;
+        img{
+            width: 70vw;
+            max-width: 1100px;
+            margin-top: -50vh;
+            margin-right: -20vw;
+        }
+        .square-scroller{
+            background-color: $dark-gray;
+            background-image: url("img/arrow_top.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            width: $height;
+            height: $height;
+            align-self: flex-start;
+            border-radius: 50%;
+            margin: 5px;
+        }
+    }
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    padding: 0 8vw 10vh 10vw;
+    justify-content: space-between;
+    color: $gray;
+    font-family: Montserrat;
+    .container:first-child{
+        display: flex;
+        flex-direction: column;
+        .site-map{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 120px;
+            width: 200px;
+            a{
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .container:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 20vw;
+        .links{
+            margin-bottom: 20px;
+        }
+        a{
+            padding: 6px 10px;
+            border-radius: 5px;
+            color: $white;
+        }
+        a:first-child{
+            background-color: $tweet-color;
+        }
+        a:nth-child(2){
+            background-color: $facebook-color;
+        }
+        p{
+            text-align: right;
+        }
+    }
+}
+
+@import "media.scss";

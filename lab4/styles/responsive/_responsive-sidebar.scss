@@ -1,0 +1,13 @@
+@media (max-width: 768px){
+    .sidebar{
+        &__social{
+            display: none;
+        }
+        &__nav{
+            font-size: $mobile-font-size-sidebar;
+        }
+        .nav__item:hover{
+            font-size: $mobile-font-size-sidebar-hover;
+        }
+    }
+}

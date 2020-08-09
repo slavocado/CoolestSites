@@ -1,0 +1,87 @@
+.page2__slider{
+    width: 80vw;
+    max-width: 1400px;
+}
+
+.page__slider{
+    width: 40vw;
+    max-width: 540px;
+}
+
+.slider{
+    &__item{
+        min-height: $slider-item-height;
+        margin: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+    &__linkbox{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: $linkbox-padding;
+        @include flex(flex-start, space-between, column);
+        height: calc(100% + 60px + 20px); // 20px is $linkbox-padding
+        transition: ease $transition-time;
+        &:hover{
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+    &__number{
+        flex-grow: 1;
+        font-size: $number-font-size;
+        // horisontal white line near number line
+        &::after{
+            content: "";
+            display: block;
+            margin-left: 30px;
+            margin-top: -5px;
+            width: 70px;
+            height: 2px;
+            background-color: white;
+        }
+    }
+    &__link{
+        margin-bottom: 20px;
+    }
+}
+
+
+// !подготовленные классы
+// /* Слайдер */
+// .slick-slider{}
+// /* Слайдер запущен */
+// .slick-slider.slick-initialized{}
+// /* Слайдер с точками */
+// .slick-slider.slick-dotted{}
+// /* Ограничивающая оболочка */
+// .slick-list {}
+// /* Лента слайдов */
+// .slick-track{}
+// /* Слайд */
+// .slick-slide{}
+// /* Слайд активный (показывается) */
+// .slick-slide.slick-active{}
+// /* Слайд основной */
+// .slick-slide.slick-current{}
+// /* Слайд по центру */
+// .slick-slide.slick-center{}
+// /* Клонированный слайд */
+// .slick-slide.slick-cloned{}
+// /* Стрелка */
+// .slick-arrow{}
+// /* Стрелка влево */
+// .slick-arrow.slick-prev{}
+// /* Стрелка вправо */
+// .slick-arrow.slick-next{}
+// /* Стрелка не активная */
+// .slick-arrow.slick-disabled{}
+// /* Точки (булиты) */
+// .slick-dots{}
+// .slick-dots li{}
+// /* Активная точка */
+// .slick-dots li.slick-active{}
+// /* Элемент точки */
+// .slick-dots li button{}

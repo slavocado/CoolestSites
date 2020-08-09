@@ -1,0 +1,77 @@
+@mixin flex ($align, $justify, $direction){
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+// sidebar logic
+.sidebar {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: $main-bgc;
+    left: -100vw;
+    transition: ease 1s;
+  }
+  
+  .sidebar.active {
+    left: 0px;
+  }
+  
+  .sidebar ul li {
+    list-style: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px 24px;
+  }
+  
+
+  //sidebar styles
+.sidebar{
+  @include flex(stretch, flex-start, column);
+  z-index: 20;
+  &__social{
+    position: absolute;
+    left: 50px;
+    bottom: 40px;
+  }
+  .social__item{
+    &:hover{
+      background-color: $sidebar-instruments-hover-color;
+    }
+  }
+  &__heading{
+    @include flex(center, space-between, row);
+  }
+  .close-btn{
+    border-radius: 5px;
+    padding: 5px;
+    transition: $transition-time;
+    &:hover{
+      background-color: rgba(189, 63, 63, 0.5);
+      transform: scale(1.05);
+    }
+  }
+  &__brick{
+    width: 30px;
+  }
+  &__nav{
+    @include flex(center, space-between, column);
+    text-transform: uppercase;
+    font-size: $font-size-sidebar;
+    letter-spacing: 0.1em;
+    margin-top: 20vh;
+  }
+  .nav__item{
+    text-align: center;
+    margin-bottom: 50px;
+    color: $nav-link;
+    transition: ease $transition-time;
+    &:hover{
+      color: $nav-link-hover;
+      font-size: $font-size-sidebar-hover;
+    }
+  }
+}
+

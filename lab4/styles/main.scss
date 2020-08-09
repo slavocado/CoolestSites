@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Forum&display=swap&subset=cyrillic');
+
+@import "variables";
+@import "null_style";
+@import "animation";
+
+// mixins
+@mixin flex ($align, $justify, $direction){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+//global styles
+body{
+    color: white;
+    font-family: $font-stack;
+    letter-spacing: 0.15em;
+    background-color: $main-bgc;
+}
+
+*::selection{
+    background-color: #ffdfdf;
+    color: rgb(37, 5, 5);
+}
+
+a{
+    color: white;
+}
+
+h1, h2{
+    text-transform: uppercase;
+}
+
+h1{
+    font-size: $h1-desktop;
+}
+h2{
+    font-size: $h2-desktop;
+    line-height: 170%;
+}
+h3{
+    font-size: $h3-desktop;
+    text-transform: uppercase;
+    line-height: 170%;
+}
+
+
+.button{
+    font-size: $font-size-button;
+    @include flex(center, center, row);
+    padding: 20px 30px;
+    min-width: 190px;
+    text-transform: uppercase;
+    transition: $transition-time;
+    &:hover{
+        color: black;
+        background-color: white;
+    }
+}
+.button-transparent{
+    background-color: rgba(0, 0, 0, 0.0);
+    border: 1px solid white;
+}
+.button-mid-transparent{
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid white;
+}
+.button-non-transparent{
+    background-color: rgba(0, 0, 0, 1);
+    border: 1px solid transparent;
+}
+
+.social{
+    @include flex(center, space-between, column);
+    .social__item{
+        border-radius: 50%;
+        padding: 8px;
+        transition: $transition-time;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+}
+
+
+// first page styles //////////////////////////////
+.begin-page{
+    padding: 90px 80px 0 80px;
+    min-height: 100vh;
+}
+.page1{
+   
+    background-image: url(../img/bg.png);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 20px;
+    @include flex(stretch, space-between, column);
+    &__header{
+        @include flex(center, space-between, row);
+    }
+    &__menu{
+        font-size: 20px;
+        text-transform: uppercase;
+        @include flex(center, flex-start, row);
+        &:hover{
+            cursor: pointer;
+        }
+        img{
+            margin-right: 10px;
+        }
+    }
+    &__heading{
+        text-align: center;
+    }
+    
+    //instrument styles
+    &__instruments{
+        @include flex(center, space-between, row);
+        min-height: 180px;
+        height: 30vh;
+        max-height: 300px;
+    }
+    &__social{
+        .social__item{
+            &:hover{
+                background-color: $instruments-hover-color;
+            }
+        }
+    }
+    &__watch-next{
+        @include flex(stretch, space-between, column);
+        align-self: stretch;
+    }
+    &__mouse{
+        @include flex(center, center, row);
+        img{
+            transition: $transition-time;
+            animation: updown 2s ease infinite;
+            border-radius: 17px;
+            &:hover{
+                background-color: rgb(122, 122, 122);
+            }
+        }
+    }
+    &__watch-catalog{
+        writing-mode: vertical-lr;
+        @include flex(center, space-between, row);
+        span{
+            margin-bottom: 20px;
+        }
+        .watch-catalog__arrow{
+            animation: updown2 1s ease infinite;
+        }
+    }
+}
+// first page styles //////////////////////////////
+
+// second page styles //////////////////////////////
+.page2{
+    @include flex(center, space-between, column);
+    padding: 170px 10vw;
+    overflow: hidden;
+    &__header{
+        position: relative;
+        margin-bottom: 100px;
+        //white line under h2
+        &::after{
+            content: "";
+            display: block;
+            width: 85px;
+            height: 2px;
+            background-color: white;
+            margin-top: 25px;
+            margin-left: 70px;
+        }
+        &::before{
+            position: absolute;
+            width: 100vw;
+            left: -37vw;
+            bottom: -20vh;
+            content: "Каталог услуг";
+            text-transform: uppercase;
+            font-size: 13vw;
+            color: rgba(255, 255, 255, 0.05);
+        }
+    }
+}
+// second page styles //////////////////////////////
+
+// third page styles //////////////////////////////
+.page3{
+    margin-bottom: 170px;
+    display: flex;
+    justify-content: center;
+    &__holder{
+        @include flex(center, space-around, row);
+        max-width: 1440px;
+    }
+    &__text-holder{
+        @include flex(flex-start, space-around, column);
+        width: $text-holder-width;
+        height: $text-holder-height;
+        line-height: 170%;
+    }
+    &__line{
+        width: 85px;
+        height: 2px;
+        background-color: white;
+    }
+    &__img{
+        width: 50%;
+        max-width: 690px;
+        min-width: 320px;
+    }
+}
+// third page styles //////////////////////////////
+
+
+@import "modal";
+@import "sidebar";
+@import "slider";
+@import "footer";
+@import "frame";
+
+@import "responsive/responsive-frame";
+@import "responsive/responsive-main";
+@import "responsive/responsive-slider";
+@import "responsive/responsive-sidebar";
+@import "responsive/responsive-footer";
+@import "responsive/responsive-modal";
