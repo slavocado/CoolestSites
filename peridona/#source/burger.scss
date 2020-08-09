@@ -1,0 +1,171 @@
+/*burger*/
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    width: 80%;
+}
+
+.header__burger{
+    display: none;
+}
+
+.wrap{
+    .header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        &:before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(240, 240, 240);
+            z-index: 2;
+        }
+        .header__body{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            align-items: center;
+            .header__logo{
+                flex: 0 0 140px;
+                overflow: hidden;
+                position: relative;
+                z-index: 3;
+                margin-top: -8px;
+                img{
+                    max-width: 100%;
+                    display: block;
+                }
+            }
+            .header__menu{
+                .header__list{
+                    display: flex;
+                    li{
+                        list-style: none;
+                        margin-left: 20px;
+                        position: relative;
+                        z-index: 2;
+                        border-radius: 10px;
+                        padding: 6px 8px;
+                        transition: .4s;
+                        &:hover{
+                            -webkit-box-shadow: 5px 10px 96px -7px rgba(0,0,0,0.3);
+                            -moz-box-shadow: 5px 10px 96px -7px rgba(0,0,0,0.3);
+                            box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+                        }
+                    }
+                    .header__link{
+                        color: #082362;
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        font-weight: 300;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    body.lock{
+        overflow: hidden;
+    }
+    .container{
+        margin: 0;
+        width: 90%;
+    }
+    .wrap{
+        .header{
+            height: 50px;
+            .header__body{
+                height: 50px;
+                .header__logo{
+                    flex: 0 0 100px;
+                }
+                .header__menu{
+                    position: fixed;
+                    top: -100%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgb(224, 224, 224);
+                    padding: 70px 10px 20px 10px;
+                    transition: ease-out .4s;
+                    overflow: auto;
+                    &.active{
+                        top: 0;
+                    }
+                    .header__list{
+                        display: block;
+                        li{
+                            margin-left: 0;
+                            margin-bottom: 20px;
+                        }
+                        .header__link{
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .header__burger{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        z-index: 3;
+        &:before,
+        &:after{
+            content: "";
+            background-color: #082362;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            transition: .5s;
+        }
+        &:before{
+            top: 0;
+        }
+        &:after{
+            bottom: 0;
+        }
+        &.active:before{
+            transform: rotate(45deg);
+            top: 9px;
+        }
+        &.active:after{
+            transform: rotate(-45deg);
+            bottom: 9px;
+        }
+        &.active{
+            span{
+                transform: scale(0);
+            }
+        }
+        span{
+            position: absolute;
+            background-color: #082362;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            top: 9px;
+            transition: .5s;
+        }
+    }
+}
+/*burger end*/

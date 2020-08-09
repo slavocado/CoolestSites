@@ -1,0 +1,53 @@
+.second-page{
+    @include flex (center, space-around, column);
+    padding-top: 100px;
+
+    &__card{
+        width: 100%;
+        @include flex (center, space-around, column);
+        margin-bottom: 150px;
+        &_center{
+            text-align: center;
+        }
+    }
+    .card{
+        width: 100%;
+        &__skill-desc{
+            @include flex (center, space-between, row);
+            &:last-child{
+                flex-direction: row-reverse;
+                margin-top: 100px;
+            }
+            .desc-info{
+                width: 30vw;
+            }
+        }
+        &__heading{
+            margin: 50px 0;
+        }
+        &__skills{
+            width: 80%;
+            min-width: 620px;
+            max-width: 800px;
+        }
+        &__image{
+            width: 150px;
+        }
+    }
+    .desc{
+        &__image-pers{
+            height: 150px;
+        }
+        &__image-tech{
+            width: 80px;
+        }
+    }
+    .desc-info{
+        width: 40vw;
+        min-width: 290px;
+        max-width: 400px;
+        &__heading{
+            margin-bottom: 1rem;
+        }
+    }
+}

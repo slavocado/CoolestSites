@@ -1,0 +1,20 @@
+@media(max-width: 1024px){
+    .second-page{
+        .card{
+            &__skill-desc{
+                flex-direction: column;
+                text-align: center;
+                min-height: 450px;
+                &:last-child{
+                    flex-direction: column;
+                }
+                .desc-info{
+                    width: 40vw;
+                }
+            }
+            &__skills{
+                min-width: unset;
+            }
+        }
+    }
+}

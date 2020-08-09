@@ -1,0 +1,17 @@
+@media (max-width: 426px){
+    .header{
+        flex-direction: column;
+        &__logo{
+            height: 80px;
+        }
+        &__link{
+            margin-right: 0;
+        }
+        &__item{
+            margin-bottom: 15px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

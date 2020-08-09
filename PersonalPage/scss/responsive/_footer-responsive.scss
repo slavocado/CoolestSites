@@ -1,0 +1,13 @@
+@media (max-width: 768px){
+    .footer{
+        min-height: 380px;
+        &__form{
+            flex-direction: column;
+        }
+        &__input{
+            width: 60vw;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+}

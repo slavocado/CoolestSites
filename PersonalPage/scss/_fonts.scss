@@ -1,0 +1,33 @@
+h1, h2, h3, h4, a ,p{
+    font-family: 'Nunito', sans-serif;
+}
+
+h1{
+    font-size: 80px;
+    color: $main-font-color;
+}
+
+h2{
+    font-size: 40px;
+    color: $main-font-color;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 22px;
+    color: $main-hover-light-color;
+    font-weight: 600;
+}
+
+a{
+    font-size: 24px;
+    color: $main-font-color;
+}
+
+.second-page p{
+    font-family: 'Playfair Display', serif;
+    color: $paragraph-color;
+    font-size: 18px;
+    letter-spacing: .1rem;
+    line-height: 1.7rem;
+}

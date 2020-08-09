@@ -1,0 +1,38 @@
+@mixin flex ($align, $justify, $direction){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@import "null_style";
+@import "variables";
+@import "fonts";
+@import "header";
+@import "first-page";
+@import "second-page";
+@import "footer";
+
+
+.width-limit{
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.my-face{
+    transition: .2s cubic-bezier(0.42, 0, 0, 2.01);
+    border-radius: 50%;
+        &:hover{
+            transform: scale(1.1);
+        }
+}
+
+@media (min-width: 1440px){
+    .width-limit{
+        padding: 20px 20vw;
+    }
+}
+
+@import "responsive/header-responsive";
+@import "responsive/second-page-responsive";
+@import "responsive/footer-responsive";

@@ -1,0 +1,23 @@
+.header{
+    background-color: $main-bg-color;
+    border-bottom: 2px solid $border-color;
+    @include flex (center, space-around, row);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    &__item{
+        &:first-child{
+            flex-grow: 1;
+        }
+    }
+    &__logo{
+        height: 120px;
+    }
+    &__link{
+        margin-right: 20px;
+        transition: .4s;
+        &:hover{
+            letter-spacing: .1rem;
+            color: $main-hover-light-color;
+        }
+    }
+}

@@ -1,0 +1,291 @@
+*::selection{
+    background: #e0ebe8;
+    color: #545454;
+    text-shadow: none;
+}
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, a{
+    font-family: 'Nunito', sans-serif;
+}
+
+h1{
+    font-size: 80px;
+    margin-bottom: 10px;
+    font-weight: 200;
+    color: #45b29a;
+}
+
+h2{
+    font-size: 40px;
+    color: #1e836c;
+    margin-bottom: 30px;
+}
+
+h3{
+    font-size: 22px;
+    color: #45b29a;
+}
+
+a{
+    font-size: 20px;
+    color: #1e836c;
+}
+
+a:first-child{
+    color: #21564b;
+}
+
+p{
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    color: #545454;
+}
+
+/* header */
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 120px;
+    background-color: rgb(219, 233, 228);
+    border-bottom: 2px solid #c6c6c657;
+}
+
+nav{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    min-width: 150px;
+}
+
+a{
+    text-decoration: none;
+    transition: 1s;
+}
+
+a:hover{
+    color: rgb(138, 185, 166);
+    transition: 1s;
+}
+/* header end*/
+
+/* First page */
+.bgcolor{
+    background-color: rgb(219, 233, 228);
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    padding-top: 7%;
+}
+
+.iam{
+    padding-bottom: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iam h3{
+    color: #45b29a;
+    font-weight: 200;
+}
+
+.planet-holder img{
+    width: 100%;
+    margin-bottom: -4px;
+}
+/* First page end*/
+
+/* "Hi" content */
+
+.hi p{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+
+.me{
+    height: 150px;
+}
+/* Hi content end */
+
+/* "What" content */
+.skills{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 600px;
+}
+
+.skills:last-child{
+    flex-direction: row-reverse;
+    margin-top: 60px;
+}
+
+.competence{
+    width: 50%;
+}
+/* "What" content end*/
+
+/* "Help" content */
+.help .button{
+    background: #1e7260;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding-top: 5px;
+    margin: 20px 0;
+    color: #e8eceb;
+    transition: 0.3s ease all;
+}
+
+.help .button:hover{
+    box-shadow: 0 0 10px rgba(20, 20, 20, 0.411);
+    transition: 0.3s ease all;
+}
+
+.help p{
+    width: 70%;
+    text-align: center;
+}
+
+footer img{
+    height: 30px;
+}
+/* "Help" content end*/
+
+/* Footer*/
+footer .content{
+    padding: 20px 0;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c3ddd5;
+    margin-top: 100px;
+}
+
+form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input{
+    margin-right: 30px;
+    outline: none;
+    width: 100%;
+    padding: 10px 15px;
+    background: #e8eceb;
+    border-radius: 5px;
+    border: 1px solid #1e7260;
+    min-width: 180px;
+    transition: 1s;
+}
+input[value]:hover{
+    background-color: rgb(251, 255, 255);
+    transition: 1s;
+    cursor: pointer;
+}
+/* Footer end*/
+
+@media screen and (max-width: 980px){
+    h1{
+        font-size: 130px;
+    }
+    h2{
+        font-size: 70px;
+    }
+    .iam h3{
+        font-size: 50px;
+    }
+    h3{
+        text-align: center;
+        font-size: 30px;
+    }
+    .content h3{
+        font-size: 60px;
+    }
+    .competence h3{
+        font-size: 60px;
+    }
+    .competence p{
+        font-size: 48px;
+    }
+    p{
+        font-size: 38px;
+        width: 100%;
+        text-align: center;
+    }
+    .hi p{
+        width: 80%;
+    }
+    .help p{
+        width: 80%;
+    }
+    .content{
+        flex-direction: column;
+        width: 100%;
+        max-width: 981px;
+    }
+    .skills{
+        flex-direction: column;
+    }
+    .skills:last-child{
+        flex-direction: column;
+    }
+    .skills img{
+        margin-bottom: 20px;
+    }
+    .competence{
+        width: 80%;
+    }
+    form{
+        flex-direction: column;
+        width: 70%;
+    }
+    input{
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: 50px;
+        font-size: 30px;
+    }
+    nav{
+        min-width: 250px;
+    }
+    a{
+        font-size: 35px;
+    }
+    input{
+        height: 70px;
+    }
+    footer img{
+        height: 70px;
+    }
+}

@@ -1,0 +1,20 @@
+.first-page{
+    min-height: calc(100vh - 162px);
+    @include flex (center, space-between, column);
+    background-color: $main-bg-color;
+    overflow: hidden; //for .first-page__image
+    &__heading-one{
+        margin-top: 20vh;
+    }
+    &__text{
+        margin-top: 10vh;
+        font-size: 24px;
+        color: $main-font-color;
+    }
+    &__image{
+        margin-top: 10vh;
+        width: 100vw;
+        max-width: 800px;
+        min-width: 400px;
+    }
+}
