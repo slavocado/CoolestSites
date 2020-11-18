@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "peridona",
+    "public": "/",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

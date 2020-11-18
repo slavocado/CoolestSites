@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "eclipse1",
+    "public": "/",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
